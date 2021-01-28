@@ -1,15 +1,19 @@
-var  permissions ={
-    'getUsers': {
-        all: ['head-trainer'],
-        read : ['trainee', 'trainer'],
-        write : ['trainer'],
-        delete: [],
+ import {permissions} from '../../Extra/constants';
+
+function hasPermission(moduleName, role, permissionType){
+    if(Object.keys(permissions).includes(moduleName)){
+        if(permissions[moduleName].all.includes(role)){
+            console.log(true);
+        }
+        else if(Array.isArray(permissions[moduleName][permissionType]) && 
+        (permissions[moduleName][permissionType].includes(role))){
+            console.log(true);
+        }else{
+            console.log(false);
+        }
+    }else{
+        console.log(" ModuleName is not present in the given object");
     }
 }
 
-function hasPermission(moduleName, role, permissionType){
-    const result = (Array.isArray(permissions[moduleName][permissionType]) && 
-     (permissions[moduleName][permissionType].includes(role)));
-    console.log(result);
-}
- hasPermission('getUsers', "trainee","delete");
+export default hasPermission;

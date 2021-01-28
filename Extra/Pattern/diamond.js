@@ -1,5 +1,4 @@
-const values =  process.argv.slice(2);
-  
+ 
 function DiamondPattern(row){
 	let count = 1;
 	let rows = row;
@@ -25,8 +24,8 @@ function DiamondPattern(row){
 		console.log(str)
 	}
 }
-if( values > 1 && values <= 10){ 
- 	DiamondPattern(values)
- }else{
-    console.log("Please enter the value between 2 to 10");
- }
+
+// module.exports = DiamondPattern;
+
+export default DiamondPattern;
+

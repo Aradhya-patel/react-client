@@ -1,10 +1,10 @@
-const values =  process.argv.slice(2);
+// const values =  process.argv.slice(2);
   
-if( values > 1 && values <= 10){	 
-	EquilateralTriangle(values)
-}else{
-   console.log("Please enter the value between 2 to 10");
-}
+// if( values > 1 && values <= 10){	 
+// 	EquilateralTriangle(values)
+// }else{
+//    console.log("Please enter the value between 2 to 10");
+// }
 
 function EquilateralTriangle(rows){
 	for(let i=1; i <= rows; i++){
@@ -19,4 +19,4 @@ function EquilateralTriangle(rows){
 	}
 }
 
-
+export default EquilateralTriangle;
