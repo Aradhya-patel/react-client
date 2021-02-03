@@ -5,12 +5,32 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/node": "^7.12.10",
-    "@babel/preset-env": "^7.12.11"
+    "@babel/preset-env": "^7.12.11",
+    "@types/node": "^14.14.22",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^4.3.8",
+    "lint": "^0.7.0",
+    "nodemon": "^2.0.7",
+    "tsc-watch": "^4.2.9",
+    "tslint": "^6.1.3",
+    "typescript": "^4.1.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:extra": "babel-node extra",
+    "start:extraTs": "tsc-watch --project . --onSuccess \"npm run nodemon\"",
+    "nodemon": "nodemon ./dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "node ./node_modules/tslint/bin/tslint -c tslint.json -p tsconfig.json --exclude 'node_modules/**/*.{j,t}s'",
+    "lint:fix": "npm run lint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm  run lint"
+    }
   },
   "repository": {
     "type": "git",
@@ -21,5 +41,10 @@
   "bugs": {
     "url": "https://github.com/Aradhya-successive/react-client/issues"
   },
-  "homepage": "https://github.com/Aradhya-successive/react-client#readme"
+  "homepage": "https://github.com/Aradhya-successive/react-client#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

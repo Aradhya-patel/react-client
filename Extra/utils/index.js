@@ -1,3 +1,4 @@
-import hasPermission from './permissions';
+import Permissions from './permissions';
 
-export  default hasPermission;
+let hasPermission = new Permissions().Permissions;
+hasPermission;
