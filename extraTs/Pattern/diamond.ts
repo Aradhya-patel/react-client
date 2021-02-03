@@ -1,9 +1,9 @@
-// export class Diamond {
+
 export function diamondPattern(row: number) {
 	let count = 1;
-	let rows = row;
+	const rows = row;
 	for (let i = 1; i <= (2 * rows); i++) {
-		let str = ''; 685
+		let str = '';
 		if (i <= rows) {
 			for (let j = (rows - i); j > 0; j--) {
 				str += ' ';
@@ -24,4 +24,3 @@ export function diamondPattern(row: number) {
 		console.log(str);
 	}
 }
-// }

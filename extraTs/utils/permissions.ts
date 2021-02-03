@@ -1,4 +1,4 @@
-import { permissions } from '../constants'
+import { permissions } from '../constants';
 
 export function hasPermission(moduleName?: string, role?: string, permissionType?: string) {
     if (Object.keys(permissions).includes(moduleName)) {
@@ -12,7 +12,7 @@ export function hasPermission(moduleName?: string, role?: string, permissionType
             console.log(false);
         }
     } else {
-        console.log(" ModuleName is not present in the given object");
+        console.log('ModuleName is not present in the given object');
     }
 }
 

@@ -19,4 +19,4 @@ equilateralTriangle(values);
 
 
 validateUsers(users);
-hasPermission('Users', "trainer", "read");
+hasPermission('Users', 'trainer', 'read');

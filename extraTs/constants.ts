@@ -6,7 +6,7 @@ export const permissions = {
         write: ['trainer'],
         delete: [],
     }
-}
+};
 
 export const users = [
     {
@@ -17,7 +17,7 @@ export const users = [
         traineeEmail: 'trainee2@gmail.com',
         reviewerEmail: 'reviewer2@successive.tech',
     }
-]
+];
 
 // export { users, permissions };
 
